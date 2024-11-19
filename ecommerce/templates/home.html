@@ -81,8 +81,8 @@ updatePopover(cart);
 function updatePopover(cart) {
     
   console.log('we are inside update popover')
-  var popStr = "";
   var popStr = popStr + "<h5> Cart for your items in my shopping cart </h5> <div class='mx-2 my-2'>";
+
   var i=1;
   for(var item in cart)
   {
@@ -91,7 +91,7 @@ function updatePopover(cart) {
     i=i+1;
   }
 
-  popStr =popStr + '</div><a href="/checkout"><button class="btn btn-success" id="clearCart">Checkout</button></a>  <button class="btn btn-dark" onclick="clearCart()" id="clearCart">ClearCart</button>'
+  popStr =popStr + '</div><a href="/checkout"><button class="btn btn-success" id="clearCart">Checkout</button></a> <button class="btn btn-dark" onclick="clearCart()" id="clearCart">ClearCart</button>'
 
   document.getElementById('popcart').setAttribute('data-content',popStr);
   $('#popcart').popover('show');
