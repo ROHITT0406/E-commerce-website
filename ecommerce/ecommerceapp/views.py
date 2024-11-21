@@ -106,3 +106,7 @@ def handlerequest(request):
         else:
             print('order was not successful because'+response_dict['RESPMSG'])
     return render(request,'paymentstatus.html',{'response_dict':response_dict})
+def term(request):
+    return render(request,"termservice.html")
+def pripolicy(request):
+    return render(request,"privacy.html")
