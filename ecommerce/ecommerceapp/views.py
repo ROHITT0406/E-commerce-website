@@ -61,7 +61,7 @@ def checkout(request):
         thank=True
         
         id = Order.order_id
-        oid=str(id)+"shopycart"
+        oid=str(id)+"ShopyCart"
         param_dict = {
             'MID':keys.MID,
             'ORDER_ID':oid,
@@ -92,7 +92,7 @@ def handlerequest(request):
             print('order successful')
             a=response_dict['ORDERID']
             b=response_dict['TXNAMOUNT']
-            rid=a.replace("shopycart","")
+            rid=a.replace("ShopyCart","")
             print(rid)
             filter2 = Orders.objects.filter(order_id=rid)
             print(filter2)
