@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Login{% endblock title %}
+{% block title %}Reset Password{% endblock title %}
 {% block content %}
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
 <div class="card bg-light p-4">
               
-  <h3 class=" text-white bg-dark text-center p-3"> Login Here</h3>
+  <h3 class=" text-white bg-dark text-center p-3"> Request a reset Link</h3>
    
   {% for message in messages  %}
   <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
@@ -15,27 +15,20 @@
     </div>
   {% endfor %}
   
-  <form action="/auth/login/" method="post">
+  <form action="/auth/request-reset-email/" method="post">
               {% csrf_token %}
               <label for="email">Email</label>
               <div class="form-group">
                  
                   <input type="email" class="form-control mb-3" name="email" placeholder="name@gmail.com" required>
               </div>
-              <label for="pass1">Password</label>
-              <div class="form-group">
-                  <input type="password" class="form-control mb-3" name="pass1" placeholder="Password" required>
               
-             
               <div class="d-grid gap-2">
-                  <button class="btn btn-dark" type="submit"> Login</button>
+                  <button class="btn btn-dark" type="submit"> submit</button>
                   
               </div>
-              <br>  
-              <span> Forget Password?<a href="/auth/request-reset-email/">Reset</a></span> 
-              <br>
-              <br> 
-               New User?<a href="/auth/signup/"> signup</a>
+              <br>    
+               <a href="/"> Go Back</a>
           </form>                
   
 
