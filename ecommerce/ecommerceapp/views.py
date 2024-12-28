@@ -36,6 +36,14 @@ def contact(request):
     return render(request,"contact.html")
 def blog(request):
     return render(request,"blog.html")
+def cart(request):
+    if not request.user.is_authenticated:
+        messages.warning(request, "Login & Try again!")
+        return redirect('/auth/login')
+
+    return render(request, "cart.html")
+    # if request.method=="POST":
+    #     print("working till here from the python")
 def checkout(request):
     if not request.user.is_authenticated:
         messages.warning(request,"Login & Try Again")
