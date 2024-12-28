@@ -32,6 +32,16 @@
     <!-- Main CSS File -->
     <link href="{%  static "/assets/css/main.css" %}" rel="stylesheet">
 
+    <!-- <style>
+         .popover {
+            max-width: none !important;
+        }
+        .popover-body {
+            overflow: visible !important;
+        }
+
+    </style>  -->
+
 
 </head>
 
@@ -52,28 +62,29 @@
                    
                    
                     <li><a href="/profile">My profile<a></li>
-                        <li><a href="/checkout">Checkout</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    <button type="button" class="btn btn-secondary" data-bs-container="body" id="popcart" data-bs-toggle="popover" data-bs-placement="bottom" data-html="true">
-                     <i class="fa-solid fa-cart-shopping"></i>Cart(<span id="cart">0</span>)
-                    </button>
+                    <li><a href="/checkout">Checkout</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li>
+                        <a type="button" class="btn btn-secondary" href="/cart" data-bs-container="body" id="popcart" data-bs-toggle="popover" data-bs-placement="bottom" data-html="true">
+                         <i class="fa-solid fa-cart-shopping"></i>Cart(<span id="cart">0</span>)
+                        </a>
+                    </li>
 
                     {% if request.user.is_authenticated %}
                     <li><a href="/auth/logout/">Logout <i class="fa-solid fa-right-from-bracket"></i></a></li>
                     {% else %}
                     <li class="dropdown"><a href="#"><span>Sign In</span> <i
                         class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li><a href="/auth/signup/">Signup <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                        <ul>
+                            <li><a href="/auth/signup/">Signup <i class="fa-solid fa-right-to-bracket"></i></a></li>
 
-                    <li><a href="/auth/login/">Login</a></li>
-                    
+                            <li><a href="/auth/login/">Login</a></li>
+                            
 
-                </ul>
-                {% endif %}
-            </li>
+                        </ul>
+                    {% endif %}
+                    </li>
                    
-
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -84,7 +95,7 @@
     <main class="main">
         
 
-        <section id="hero" class="hero section dark-background">
+        <section id="hero" class="hero section">
         
             <img src="{%  static "images/image.jpg"  %}" alt="" data-aos="fade-in">
         
